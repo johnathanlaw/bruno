@@ -1,0 +1,60 @@
+meta {
+  name: create-or-update-connector
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/kafka/v2/cluster/:cluster/connect/:connectCluster/connector?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+params:path {
+  cluster: <string>
+  connectCluster: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "cluster": "<string>",
+      "connectCluster": "<string>",
+      "labels": {
+        "nullae4": "<string>"
+      },
+      "autoRestart": {
+        "enabled": "<boolean>",
+        "frequencySeconds": "<long>"
+      },
+      "description": "<string>"
+    },
+    "spec": {
+      "config": {
+        "essec1f": "<string>",
+        "sed_2d": "<string>",
+        "consectetur_7e": "<string>"
+      }
+    }
+  }
+}
+
+docs {
+  Create or update a Connector
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Conduktor Console API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

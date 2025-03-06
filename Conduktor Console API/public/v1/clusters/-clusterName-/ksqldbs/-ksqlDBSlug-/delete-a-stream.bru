@@ -1,0 +1,29 @@
+meta {
+  name: delete-a-stream
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/ksqldbs/:ksqlDBSlug/streams/:sourceName
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  ksqlDBSlug: <string>
+  sourceName: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a stream
+}

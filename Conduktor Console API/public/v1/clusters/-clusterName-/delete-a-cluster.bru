@@ -1,0 +1,23 @@
+meta {
+  name: delete-a-cluster
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+}
+
+headers {
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}

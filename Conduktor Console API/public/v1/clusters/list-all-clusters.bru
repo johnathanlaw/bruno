@@ -1,0 +1,23 @@
+meta {
+  name: list-all-clusters
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/clusters
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get all clusters of the organization
+}

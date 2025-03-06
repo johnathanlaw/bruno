@@ -1,0 +1,28 @@
+meta {
+  name: list-tables
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/ksqldbs/:ksqlDBSlug/tables
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  ksqlDBSlug: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List tables
+}

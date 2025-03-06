@@ -1,0 +1,27 @@
+meta {
+  name: get-application-instance-permission-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/self-serve/v1/application-instance-permission/:application-instance-permission-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  application-instance-permission-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get ApplicationInstancePermission by name
+}

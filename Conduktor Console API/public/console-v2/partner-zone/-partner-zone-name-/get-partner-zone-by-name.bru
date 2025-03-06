@@ -1,0 +1,27 @@
+meta {
+  name: get-partner-zone-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/console/v2/partner-zone/:partner-zone-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  partner-zone-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get PartnerZone by name
+}

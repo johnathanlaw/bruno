@@ -1,0 +1,57 @@
+meta {
+  name: create-topic
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/public/kafka/v2/cluster/:cluster/topic
+  body: json
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "cluster": "<string>",
+      "labels": {
+        "amet530": "<string>"
+      },
+      "catalogVisibility": "<string>",
+      "descriptionIsEditable": "<boolean>",
+      "description": "<string>",
+      "sqlStorage": {
+        "retentionTimeInSecond": "<long>",
+        "enabled": "<boolean>"
+      }
+    },
+    "spec": {
+      "partitions": "<integer>",
+      "replicationFactor": "<integer>",
+      "configs": {
+        "aute5": "<string>",
+        "adipisicing_a_2": "<string>"
+      }
+    }
+  }
+}
+
+docs {
+  Create a Topic
+}

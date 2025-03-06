@@ -1,0 +1,27 @@
+meta {
+  name: list-ksql-d-b-cluster-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/console/v2/cluster/:cluster/ksqldb
+  body: none
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List KsqlDBCluster resources
+}

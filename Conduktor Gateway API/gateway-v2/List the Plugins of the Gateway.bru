@@ -1,0 +1,29 @@
+meta {
+  name: List the Plugins of the Gateway
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/gateway/v2/plugin
+  body: none
+  auth: basic
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  List the available plugins of the gateway
+  
+  
+}

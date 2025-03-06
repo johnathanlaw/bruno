@@ -1,0 +1,55 @@
+meta {
+  name: Upsert a concentration rule
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/gateway/v2/concentration-rule?dryMode=false
+  body: json
+  auth: basic
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "kind": "<string>",
+    "apiVersion": "<string>",
+    "metadata": {
+      "name": "<^[a-zA-Z0-9._-]+$>",
+      "vCluster": "<string>"
+    },
+    "spec": {
+      "pattern": "<string>",
+      "physicalTopics": {
+        "delete": "<^[a-zA-Z0-9._-]+$>",
+        "compact": "<^[a-zA-Z0-9._-]+$>",
+        "deleteCompact": "<^[a-zA-Z0-9._-]+$>"
+      },
+      "autoManaged": "<boolean>",
+      "offsetCorrectness": "<boolean>"
+    }
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Upsert a concentration rule in a vcluster
+  
+  
+}

@@ -1,0 +1,23 @@
+meta {
+  name: list-kafka-cluster-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/console/v2/kafka-cluster
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List KafkaCluster resources
+}

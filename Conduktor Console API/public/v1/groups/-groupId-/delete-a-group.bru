@@ -1,0 +1,27 @@
+meta {
+  name: delete-a-group
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/groups/:groupId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  groupId: <string>
+}
+
+headers {
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a group from the organization
+}

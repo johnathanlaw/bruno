@@ -1,0 +1,42 @@
+meta {
+  name: Resolve interceptors
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/gateway/v2/interceptor/resolve
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "vCluster": "<string>",
+    "groups": [
+      "<string>",
+      "<string>"
+    ],
+    "username": "<string>"
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  A utility endpoint to resolve the interceptors for a given virtual cluster, groups and username.
+  Helps to understand which interceptors will be applied for a given request.
+  
+  
+}

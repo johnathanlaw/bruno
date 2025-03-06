@@ -1,0 +1,27 @@
+meta {
+  name: get-application-instance-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/self-serve/v1/application-instance/:application-instance-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  application-instance-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get ApplicationInstance by name
+}

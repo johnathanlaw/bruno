@@ -1,0 +1,28 @@
+meta {
+  name: get-kafka-connect-cluster-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/console/v2/cluster/:cluster/kafka-connect/:kafka-connect-cluster-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+  kafka-connect-cluster-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get KafkaConnectCluster by name
+}

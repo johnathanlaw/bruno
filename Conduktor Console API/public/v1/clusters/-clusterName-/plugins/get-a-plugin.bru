@@ -1,0 +1,28 @@
+meta {
+  name: get-a-plugin
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/plugins/:pluginId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  pluginId: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get a plugin
+}

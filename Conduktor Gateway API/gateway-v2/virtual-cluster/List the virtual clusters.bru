@@ -1,0 +1,29 @@
+meta {
+  name: List the virtual clusters
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/gateway/v2/virtual-cluster
+  body: none
+  auth: basic
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  List the virtual clusters
+  
+  
+}

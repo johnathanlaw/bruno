@@ -1,0 +1,61 @@
+meta {
+  name: create-or-update-topic
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/kafka/v2/cluster/:cluster/topic?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "cluster": "<string>",
+      "labels": {
+        "amet530": "<string>"
+      },
+      "catalogVisibility": "<string>",
+      "descriptionIsEditable": "<boolean>",
+      "description": "<string>",
+      "sqlStorage": {
+        "retentionTimeInSecond": "<long>",
+        "enabled": "<boolean>"
+      }
+    },
+    "spec": {
+      "partitions": "<integer>",
+      "replicationFactor": "<integer>",
+      "configs": {
+        "aute5": "<string>",
+        "adipisicing_a_2": "<string>"
+      }
+    }
+  }
+}
+
+docs {
+  Create or update a Topic
+}

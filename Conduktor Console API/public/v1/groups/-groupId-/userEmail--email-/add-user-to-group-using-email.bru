@@ -1,0 +1,28 @@
+meta {
+  name: add-user-to-group-using-email
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/public/v1/groups/:groupId/userEmail/:email
+  body: none
+  auth: bearer
+}
+
+params:path {
+  groupId: <string>
+  email: <string>
+}
+
+headers {
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Add a user to a group
+}

@@ -1,0 +1,37 @@
+meta {
+  name: List the interceptors
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/gateway/v2/interceptor?name=<string>&global=<boolean>&vcluster=<string>&group=<string>&username=<string>
+  body: none
+  auth: basic
+}
+
+params:query {
+  name: <string>
+  global: <boolean>
+  vcluster: <string>
+  group: <string>
+  username: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  List the interceptors
+  
+  
+}

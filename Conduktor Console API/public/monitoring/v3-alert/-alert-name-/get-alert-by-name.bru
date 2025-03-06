@@ -1,0 +1,33 @@
+meta {
+  name: get-alert-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/monitoring/v3/alert/:alert-name?appInstance=<string>&group=<string>&user=<string>
+  body: none
+  auth: bearer
+}
+
+params:query {
+  appInstance: <string>
+  group: <string>
+  user: <string>
+}
+
+params:path {
+  alert-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Beta
+}

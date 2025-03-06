@@ -1,0 +1,27 @@
+meta {
+  name: get-user-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/iam/v2/user/:user-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  user-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get User by name
+}

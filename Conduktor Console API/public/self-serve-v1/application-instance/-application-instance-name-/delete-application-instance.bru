@@ -1,0 +1,27 @@
+meta {
+  name: delete-application-instance
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/self-serve/v1/application-instance/:application-instance-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  application-instance-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a ApplicationInstance
+}

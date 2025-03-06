@@ -1,0 +1,35 @@
+meta {
+  name: List the concentration rules
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/gateway/v2/concentration-rule?vcluster=<string>&name=<string>&showDefaults=false
+  body: none
+  auth: basic
+}
+
+params:query {
+  vcluster: <string>
+  name: <string>
+  showDefaults: false
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  List the concentration rules of a vcluster
+  
+  
+}

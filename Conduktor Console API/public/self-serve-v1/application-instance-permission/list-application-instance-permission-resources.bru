@@ -1,0 +1,29 @@
+meta {
+  name: list-application-instance-permission-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/self-serve/v1/application-instance-permission?filterByApplication=<string>&filterByApplicationInstance=<string>&filterByGrantedTo=<string>
+  body: none
+  auth: bearer
+}
+
+params:query {
+  filterByApplication: <string>
+  filterByApplicationInstance: <string>
+  filterByGrantedTo: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List ApplicationInstancePermission resources
+}

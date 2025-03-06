@@ -1,0 +1,37 @@
+meta {
+  name: create-an-interceptor
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/interceptors
+  body: json
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "name": "<string>",
+    "pluginClass": "<string>",
+    "priority": "<integer>",
+    "config": {}
+  }
+}
+
+docs {
+  Create an Interceptor
+}

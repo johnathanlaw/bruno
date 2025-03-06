@@ -1,0 +1,27 @@
+meta {
+  name: get-user-permissions
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/users/:email/permissions
+  body: none
+  auth: bearer
+}
+
+params:path {
+  email: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get user's permissions
+}

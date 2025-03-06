@@ -1,0 +1,30 @@
+meta {
+  name: create-an-admin-token
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/token/v1/admin_tokens
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "name": "<string>"
+  }
+}
+
+docs {
+  Create a new admin API token for the organization. It can be called with an already existing admin API TOKEN or with a user token having admin permission
+}

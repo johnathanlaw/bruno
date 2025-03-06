@@ -1,0 +1,23 @@
+meta {
+  name: list-admin-tokens
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/token/v1/admin_tokens
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List the admin Public API tokens of the organization (without the token value)
+}

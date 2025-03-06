@@ -1,0 +1,27 @@
+meta {
+  name: list-topic-policy-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/self-serve/v1/topic-policy?app-instance=<string>
+  body: none
+  auth: bearer
+}
+
+params:query {
+  app-instance: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List TopicPolicy resources
+}

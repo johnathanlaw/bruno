@@ -1,0 +1,27 @@
+meta {
+  name: list-indexed-topic-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/sql/v1/cluster/:cluster/indexed_topic
+  body: none
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List IndexedTopic resources
+}

@@ -1,0 +1,27 @@
+meta {
+  name: get-logger
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/debug/v1/loggers/:loggerName
+  body: none
+  auth: bearer
+}
+
+params:path {
+  loggerName: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get all loggers of Console matching the given name
+}

@@ -1,0 +1,32 @@
+meta {
+  name: execute
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/public/sql/v1/execute?maxLine=<integer>
+  body: text
+  auth: bearer
+}
+
+params:query {
+  maxLine: <integer>
+}
+
+headers {
+  Content-Type: text/plain
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:text {
+  <string>
+}
+
+docs {
+  Run a SQL query. Admin API keys are currently not supported, please use a User API key instead.
+}

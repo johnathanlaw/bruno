@@ -1,0 +1,27 @@
+meta {
+  name: delete-a-token
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/token/v1/:token-id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  token-id: <uuid>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete an API (admin or application instance) token of the organization 
+}

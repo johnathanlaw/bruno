@@ -1,0 +1,57 @@
+meta {
+  name: Upsert an interceptor
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/gateway/v2/interceptor?dryMode=false
+  body: json
+  auth: basic
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "kind": "<string>",
+    "apiVersion": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "scope": {
+        "vCluster": "<string>",
+        "group": "<string>",
+        "username": "<string>"
+      }
+    },
+    "spec": {
+      "pluginClass": "<string>",
+      "priority": "<integer>",
+      "config": {
+        "esse_6": {}
+      },
+      "comment": "<string>"
+    }
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Upsert an interceptor
+  
+  
+}

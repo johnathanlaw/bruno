@@ -1,0 +1,107 @@
+meta {
+  name: create-or-update-a-cluster
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName
+  body: json
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "name": "<string>",
+    "bootstrapServers": "<string>",
+    "properties": "<string>",
+    "color": "<string>",
+    "icon": "<string>",
+    "schemaRegistry": {
+      "url": "<string>",
+      "type": "<string>",
+      "security": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "properties": "<string>",
+      "ignoreUntrustedCertificate": "<boolean>"
+    },
+    "kafkaConnects": [
+      {
+        "url": "<string>",
+        "name": "<string>",
+        "slug": "<string>",
+        "security": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "headers": "<string>",
+        "ignoreUntrustedCertificate": "<boolean>"
+      },
+      {
+        "url": "<string>",
+        "name": "<string>",
+        "slug": "<string>",
+        "security": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "headers": "<string>",
+        "ignoreUntrustedCertificate": "<boolean>"
+      }
+    ],
+    "ignoreUntrustedCertificate": "<boolean>",
+    "amazonSecurity": {
+      "accessKeyId": "<string>",
+      "secretKey": "<string>",
+      "type": "<string>"
+    },
+    "kafkaFlavor": {
+      "apiToken": "<string>",
+      "project": "<string>",
+      "serviceName": "<string>",
+      "type": "<string>"
+    },
+    "ksqlDBs": [
+      {
+        "url": "<string>",
+        "name": "<string>",
+        "slug": "<string>",
+        "security": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "headers": "<string>",
+        "ignoreUntrustedCertificate": "<boolean>"
+      },
+      {
+        "url": "<string>",
+        "name": "<string>",
+        "slug": "<string>",
+        "security": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "headers": "<string>",
+        "ignoreUntrustedCertificate": "<boolean>"
+      }
+    ]
+  }
+}
+
+docs {
+  
+  Create or update a cluster inside the organization
+  The technical is mandatory. if it matches an existing cluster, it will be updated, otherwise it will be created.
+  The slugs of the kafka connects must be unique within the cluster.
+  
+}

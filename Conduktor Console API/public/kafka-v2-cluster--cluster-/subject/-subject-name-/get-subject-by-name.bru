@@ -1,0 +1,28 @@
+meta {
+  name: get-subject-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/kafka/v2/cluster/:cluster/subject/:subject-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+  subject-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get Subject by name
+}

@@ -1,0 +1,23 @@
+meta {
+  name: list-app-instance-token-for-a-given-app-instance
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/token/v1/application_instance_tokens/:application-instance-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  application-instance-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}

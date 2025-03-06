@@ -1,0 +1,28 @@
+meta {
+  name: delete-a-plugin
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/interceptors/:interceptorName
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  interceptorName: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a plugin
+}

@@ -1,0 +1,101 @@
+meta {
+  name: create-or-update-partner-zone
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/console/v2/partner-zone?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "labels": {
+        "Excepteur_92f": "<string>"
+      }
+    },
+    "spec": {
+      "cluster": "<string>",
+      "url": "<string>",
+      "serviceAccount": "<string>",
+      "displayName": "<string>",
+      "description": "<string>",
+      "topics": [
+        {
+          "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "backingTopic": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "permission": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          }
+        },
+        {
+          "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "backingTopic": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "permission": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          }
+        }
+      ],
+      "partner": {
+        "name": "<string>",
+        "role": "<string>",
+        "email": "<string>",
+        "phone": "<string>"
+      },
+      "trafficControlPolicies": {
+        "maxProduceRate": "<long>",
+        "maxConsumeRate": "<integer>",
+        "limitCommitOffset": "<integer>"
+      },
+      "headers": {
+        "addOnProduce": [
+          {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          }
+        ],
+        "removeOnConsume": [
+          {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          }
+        ]
+      }
+    }
+  }
+}
+
+docs {
+  Create or update a PartnerZone
+}

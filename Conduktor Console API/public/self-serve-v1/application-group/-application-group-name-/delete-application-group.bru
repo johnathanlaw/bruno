@@ -1,0 +1,27 @@
+meta {
+  name: delete-application-group
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/self-serve/v1/application-group/:application-group-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  application-group-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a ApplicationGroup
+}

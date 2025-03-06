@@ -1,0 +1,60 @@
+meta {
+  name: create-alert
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/public/monitoring/v3/alert?appInstance=<string>&group=<string>&user=<string>
+  body: json
+  auth: bearer
+}
+
+params:query {
+  appInstance: <string>
+  group: <string>
+  user: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "appInstance": "<string>",
+      "group": "<string>",
+      "user": "<string>"
+    },
+    "spec": {
+      "cluster": "<string>",
+      "threshold": "<long>",
+      "operator": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "metric": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "type": "<string>",
+      "description": "<string>",
+      "displayName": "<string>",
+      "destination": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "disable": "<boolean>"
+    }
+  }
+}
+
+docs {
+  Beta
+}

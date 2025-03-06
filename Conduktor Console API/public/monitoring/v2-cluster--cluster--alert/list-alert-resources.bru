@@ -1,0 +1,35 @@
+meta {
+  name: list-alert-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/monitoring/v2/cluster/:cluster/alert?connector=<string>&connect=<string>&topic=<string>&consumerGroup=<string>&alertType=<string>
+  body: none
+  auth: bearer
+}
+
+params:query {
+  connector: <string>
+  connect: <string>
+  topic: <string>
+  consumerGroup: <string>
+  alertType: <string>
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Beta
+}

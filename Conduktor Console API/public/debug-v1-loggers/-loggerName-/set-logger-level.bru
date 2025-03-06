@@ -1,0 +1,28 @@
+meta {
+  name: set-logger-level
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/debug/v1/loggers/:loggerName/:level
+  body: none
+  auth: bearer
+}
+
+params:path {
+  loggerName: <string>
+  level: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Set a logger level
+}

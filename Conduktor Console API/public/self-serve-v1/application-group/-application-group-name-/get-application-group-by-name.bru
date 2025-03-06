@@ -1,0 +1,27 @@
+meta {
+  name: get-application-group-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/self-serve/v1/application-group/:application-group-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  application-group-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get ApplicationGroup by name
+}

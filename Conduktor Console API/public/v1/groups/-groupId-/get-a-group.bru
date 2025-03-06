@@ -1,0 +1,27 @@
+meta {
+  name: get-a-group
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/groups/:groupId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  groupId: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Return a group by id with its users
+}

@@ -1,0 +1,29 @@
+meta {
+  name: explain-a-query
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/ksqldbs/:ksqlDBSlug/explain/:query
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  ksqlDBSlug: <string>
+  query: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Explain a query
+}

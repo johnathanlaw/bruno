@@ -1,0 +1,28 @@
+meta {
+  name: get-confluent-api-keys
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/service-accounts-confluent/:confluentResourceId/api-keys
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  confluentResourceId: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get Confluent api keys
+}

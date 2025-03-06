@@ -1,0 +1,29 @@
+meta {
+  name: delete-connector
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/kafka/v2/cluster/:cluster/connect/:connectCluster/connector/:connector-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+  connectCluster: <string>
+  connector-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a Connector
+}

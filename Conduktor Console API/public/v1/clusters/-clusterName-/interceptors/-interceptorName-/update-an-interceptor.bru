@@ -1,0 +1,37 @@
+meta {
+  name: update-an-interceptor
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/interceptors/:interceptorName
+  body: json
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  interceptorName: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "pluginClass": "<string>",
+    "priority": "<integer>",
+    "config": {}
+  }
+}
+
+docs {
+  Update an Interceptor
+}

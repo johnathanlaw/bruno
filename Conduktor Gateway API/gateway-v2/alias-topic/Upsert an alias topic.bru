@@ -1,0 +1,49 @@
+meta {
+  name: Upsert an alias topic
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/gateway/v2/alias-topic?dryMode=false
+  body: json
+  auth: basic
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "kind": "<string>",
+    "apiVersion": "<string>",
+    "metadata": {
+      "name": "<^[a-zA-Z0-9._-]+$>",
+      "vCluster": "<^[a-zA-Z0-9_-]+$>"
+    },
+    "spec": {
+      "physicalName": "<^[a-zA-Z0-9._-]+$>",
+      "physicalCluster": "<string>"
+    }
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Upsert an alias topic in a virtual cluster
+  
+  
+}

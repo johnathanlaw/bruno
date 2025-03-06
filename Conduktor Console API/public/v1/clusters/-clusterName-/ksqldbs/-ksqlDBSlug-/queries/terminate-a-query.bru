@@ -1,0 +1,29 @@
+meta {
+  name: terminate-a-query
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/ksqldbs/:ksqlDBSlug/queries/:queryId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  ksqlDBSlug: <string>
+  queryId: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Terminate a query
+}

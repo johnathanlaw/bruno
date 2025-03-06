@@ -1,0 +1,27 @@
+meta {
+  name: delete-kafka-cluster
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/console/v2/kafka-cluster/:kafka-cluster-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  kafka-cluster-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a KafkaCluster
+}

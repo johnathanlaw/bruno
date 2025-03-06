@@ -1,0 +1,23 @@
+meta {
+  name: list-loggers
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/debug/v1/loggers
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List all loggers of Console
+}

@@ -1,0 +1,27 @@
+meta {
+  name: delete-group
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/iam/v2/group/:group-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  group-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a Group
+}

@@ -1,0 +1,29 @@
+meta {
+  name: data-catalog
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/self-serve/v1/catalog?page=<integer>&itemsPerPage=<integer>&sort=<string>
+  body: none
+  auth: bearer
+}
+
+params:query {
+  page: <integer>
+  itemsPerPage: <integer>
+  sort: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Data catalog
+}

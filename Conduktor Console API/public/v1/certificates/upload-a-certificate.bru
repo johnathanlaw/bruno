@@ -1,0 +1,29 @@
+meta {
+  name: upload-a-certificate
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/public/v1/certificates/file
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: multipart/form-data
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:multipart-form {
+  file: @file()
+  jksPassword: <string>
+}
+
+docs {
+  Import certificates in the organization from a file (.crt, .pem. or .jks)
+}

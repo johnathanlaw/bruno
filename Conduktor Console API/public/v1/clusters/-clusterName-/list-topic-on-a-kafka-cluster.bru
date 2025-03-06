@@ -1,0 +1,55 @@
+meta {
+  name: list-topic-on-a-kafka-cluster
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/topics
+  body: json
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "page": "<integer>",
+    "itemsPerPage": "<integer>",
+    "sort": "<string>",
+    "filter": [
+      {
+        "type": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "oneOf": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      },
+      {
+        "type": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "oneOf": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      }
+    ],
+    "descSort": "<boolean>"
+  }
+}
+
+docs {
+  List topic on a kafka cluster
+}

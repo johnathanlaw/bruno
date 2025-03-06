@@ -1,0 +1,57 @@
+meta {
+  name: delete-group-permissions
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/groups/:groupId/permissions
+  body: json
+  auth: bearer
+}
+
+params:path {
+  groupId: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  [
+    {
+      "clusterId": "<string>",
+      "resourceType": "<string>",
+      "permissions": [
+        {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      ]
+    },
+    {
+      "clusterId": "<string>",
+      "resourceType": "<string>",
+      "permissions": [
+        {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      ]
+    }
+  ]
+}
+
+docs {
+  Delete group's permissions
+}

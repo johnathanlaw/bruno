@@ -1,0 +1,33 @@
+meta {
+  name: Delete a group
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/gateway/v2/group/:name
+  body: none
+  auth: basic
+}
+
+params:path {
+  name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Delete a group
+  
+  
+}

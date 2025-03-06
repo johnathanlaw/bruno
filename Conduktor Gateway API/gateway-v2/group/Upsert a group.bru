@@ -1,0 +1,60 @@
+meta {
+  name: Upsert a group
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/gateway/v2/group?dryMode=false
+  body: json
+  auth: basic
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "kind": "<string>",
+    "apiVersion": "<string>",
+    "metadata": {
+      "name": "<^[a-zA-Z0-9_-]{1,100}$>"
+    },
+    "spec": {
+      "members": [
+        {
+          "name": "<string>",
+          "vCluster": "<string>"
+        },
+        {
+          "name": "<string>",
+          "vCluster": "<string>"
+        }
+      ],
+      "externalGroups": [
+        "<string>",
+        "<string>"
+      ]
+    }
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Upsert a group
+  
+  
+}

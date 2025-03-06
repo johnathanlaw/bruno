@@ -1,0 +1,23 @@
+meta {
+  name: list-all-groups
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/groups
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Return all groups of an organization
+}

@@ -1,0 +1,63 @@
+meta {
+  name: create-or-update-application-group
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/self-serve/v1/application-group?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "application": "<string>",
+      "name": "<string>"
+    },
+    "spec": {
+      "displayName": "<string>",
+      "description": "<string>",
+      "permissions": [
+        {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      ],
+      "members": [
+        "<string>",
+        "<string>"
+      ],
+      "externalGroups": [
+        "<string>",
+        "<string>"
+      ],
+      "membersFromExternalGroups": [
+        "<string>",
+        "<string>"
+      ]
+    }
+  }
+}
+
+docs {
+  Create or update a ApplicationGroup
+}

@@ -1,0 +1,27 @@
+meta {
+  name: kafka-configuration
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/public/console/v2/partner-zone/:partner-zone-name/kafka-configuration
+  body: none
+  auth: bearer
+}
+
+params:path {
+  partner-zone-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get partner zone kafka configuration
+}

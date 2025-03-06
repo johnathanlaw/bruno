@@ -1,0 +1,33 @@
+meta {
+  name: Get a virtual cluster
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/gateway/v2/virtual-cluster/:vCluster
+  body: none
+  auth: basic
+}
+
+params:path {
+  vCluster: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Get a virtual cluster
+  
+  
+}

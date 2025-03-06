@@ -1,0 +1,37 @@
+meta {
+  name: Get a group
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/gateway/v2/group/:name?showDefaults=false
+  body: none
+  auth: basic
+}
+
+params:query {
+  showDefaults: false
+}
+
+params:path {
+  name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Get a group
+  
+  
+}

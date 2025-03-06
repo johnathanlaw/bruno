@@ -1,0 +1,54 @@
+meta {
+  name: create-or-update-application-instance-permission
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/self-serve/v1/application-instance-permission?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "application": "<string>",
+      "appInstance": "<string>",
+      "name": "<string>"
+    },
+    "spec": {
+      "resource": {
+        "type": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "name": "<string>",
+        "patternType": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "connectCluster": "<string>"
+      },
+      "permission": "<string>",
+      "grantedTo": "<string>"
+    }
+  }
+}
+
+docs {
+  Create or update a ApplicationInstancePermission
+}

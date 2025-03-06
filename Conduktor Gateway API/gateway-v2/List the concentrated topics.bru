@@ -1,0 +1,35 @@
+meta {
+  name: List the concentrated topics
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/gateway/v2/concentrated-topic?vcluster=<string>&name=<string>&showDefaults=false
+  body: none
+  auth: basic
+}
+
+params:query {
+  vcluster: <string>
+  name: <string>
+  showDefaults: false
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  List the concentrated topics of a vcluster
+  
+  
+}

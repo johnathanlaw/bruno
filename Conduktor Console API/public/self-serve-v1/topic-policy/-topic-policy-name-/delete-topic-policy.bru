@@ -1,0 +1,27 @@
+meta {
+  name: delete-topic-policy
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/self-serve/v1/topic-policy/:topic-policy-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  topic-policy-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a TopicPolicy
+}

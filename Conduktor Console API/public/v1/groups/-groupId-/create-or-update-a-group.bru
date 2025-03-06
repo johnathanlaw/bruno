@@ -1,0 +1,39 @@
+meta {
+  name: create-or-update-a-group
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/v1/groups/:groupId
+  body: json
+  auth: bearer
+}
+
+params:path {
+  groupId: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "name": "<string>",
+    "description": "<string>",
+    "externalGroups": [
+      "<string>",
+      "<string>"
+    ]
+  }
+}
+
+docs {
+  Create or update a group in the organization
+}

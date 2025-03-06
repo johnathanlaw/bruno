@@ -1,0 +1,35 @@
+meta {
+  name: execute-a-statement
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName/ksqldbs/:ksqlDBSlug/statements
+  body: json
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+  ksqlDBSlug: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "ksql": "<string>"
+  }
+}
+
+docs {
+  Execute a statement
+}

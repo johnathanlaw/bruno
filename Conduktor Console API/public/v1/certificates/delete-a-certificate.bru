@@ -1,0 +1,27 @@
+meta {
+  name: delete-a-certificate
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/certificates/:certificateId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  certificateId: <string>
+}
+
+headers {
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete a certificate from the organization
+}

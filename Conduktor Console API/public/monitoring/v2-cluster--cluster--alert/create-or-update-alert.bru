@@ -1,0 +1,56 @@
+meta {
+  name: create-or-update-alert
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/monitoring/v2/cluster/:cluster/alert?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "cluster": "<string>"
+    },
+    "spec": {
+      "threshold": "<long>",
+      "operator": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "metric": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "type": "<string>",
+      "description": "<string>",
+      "displayName": "<string>",
+      "disable": "<boolean>"
+    }
+  }
+}
+
+docs {
+  Beta
+}

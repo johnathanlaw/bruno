@@ -1,0 +1,43 @@
+meta {
+  name: create-or-update-application
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/self-serve/v1/application?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>"
+    },
+    "spec": {
+      "title": "<string>",
+      "owner": "<string>",
+      "description": "<string>"
+    }
+  }
+}
+
+docs {
+  Create or update a Application
+}

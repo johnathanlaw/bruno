@@ -1,0 +1,27 @@
+meta {
+  name: list-application-group-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/self-serve/v1/application-group?application=<string>
+  body: none
+  auth: bearer
+}
+
+params:query {
+  application: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List ApplicationGroup resources
+}

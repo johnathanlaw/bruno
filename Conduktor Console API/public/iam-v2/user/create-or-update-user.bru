@@ -1,0 +1,50 @@
+meta {
+  name: create-or-update-user
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/iam/v2/user?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>"
+    },
+    "spec": {
+      "firstName": "<string>",
+      "lastName": "<string>",
+      "permissions": [
+        {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      ]
+    }
+  }
+}
+
+docs {
+  Create or update a User
+}

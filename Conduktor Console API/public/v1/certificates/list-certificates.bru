@@ -1,0 +1,23 @@
+meta {
+  name: list-certificates
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/certificates
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List the certificates of the organization
+}

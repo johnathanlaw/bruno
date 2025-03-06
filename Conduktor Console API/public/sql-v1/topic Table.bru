@@ -1,0 +1,23 @@
+meta {
+  name: topic Table
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/public/sql/v1/topicTable
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List of topic tables and their columns
+}

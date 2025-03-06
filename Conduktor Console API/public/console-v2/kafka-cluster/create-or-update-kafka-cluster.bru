@@ -1,0 +1,59 @@
+meta {
+  name: create-or-update-kafka-cluster
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/console/v2/kafka-cluster?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "labels": {
+        "deseruntf": "<string>",
+        "amet_fab": "<string>"
+      }
+    },
+    "spec": {
+      "displayName": "<string>",
+      "bootstrapServers": "<string>",
+      "properties": {
+        "aliquip_b": "<string>",
+        "dolor_c_": "<string>"
+      },
+      "color": "<string>",
+      "icon": "<string>",
+      "schemaRegistry": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "ignoreUntrustedCertificate": "<boolean>",
+      "kafkaFlavor": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      }
+    }
+  }
+}
+
+docs {
+  Create or update a KafkaCluster
+}

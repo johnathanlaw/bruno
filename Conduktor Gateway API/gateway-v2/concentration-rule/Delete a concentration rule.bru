@@ -1,0 +1,37 @@
+meta {
+  name: Delete a concentration rule
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/gateway/v2/concentration-rule
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "name": "<string>",
+    "vCluster": "<string>"
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Delete a concentration rule in a vcluster
+  
+  
+}

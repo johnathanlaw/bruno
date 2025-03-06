@@ -1,0 +1,73 @@
+meta {
+  name: create-subject
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/public/kafka/v2/cluster/:cluster/subject
+  body: json
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "cluster": "<string>",
+      "labels": {
+        "et__": "<string>"
+      }
+    },
+    "spec": {
+      "format": "<string>",
+      "schema": "<string>",
+      "compatibility": "<string>",
+      "id": "<integer>",
+      "version": "<integer>",
+      "references": [
+        {
+          "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "subject": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "version": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          }
+        },
+        {
+          "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "subject": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          },
+          "version": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+          }
+        }
+      ]
+    }
+  }
+}
+
+docs {
+  Create a Subject
+}

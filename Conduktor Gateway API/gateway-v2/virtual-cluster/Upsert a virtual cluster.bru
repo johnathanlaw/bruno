@@ -1,0 +1,56 @@
+meta {
+  name: Upsert a virtual cluster
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/gateway/v2/virtual-cluster?dryMode=false
+  body: json
+  auth: basic
+}
+
+params:query {
+  dryMode: false
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "kind": "<string>",
+    "apiVersion": "<string>",
+    "metadata": {
+      "name": "<^[a-zA-Z0-9_-]+$>"
+    },
+    "spec": {
+      "aclEnabled": "<boolean>",
+      "superUsers": [
+        "<string>",
+        "<string>"
+      ],
+      "type": "<string>",
+      "bootstrapServers": "<string>",
+      "clientProperties": {
+        "magna_31d": "<string>"
+      }
+    }
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Upsert a virtual cluster
+  
+  
+}

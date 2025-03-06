@@ -1,0 +1,27 @@
+meta {
+  name: delete-certificates
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/certificates?ids=<string>
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ids: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete multiple certificates from the organization
+}

@@ -1,0 +1,32 @@
+meta {
+  name: update-a-user
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/v1/users
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "email": "<string>",
+    "lastName": "<string>",
+    "firstName": "<string>"
+  }
+}
+
+docs {
+  Create or update a user in the organization
+}

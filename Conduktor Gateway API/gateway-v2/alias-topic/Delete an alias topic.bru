@@ -1,0 +1,37 @@
+meta {
+  name: Delete an alias topic
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/gateway/v2/alias-topic
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "name": "<string>",
+    "vCluster": "<string>"
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Delete an alias topic in a virtual cluster
+  
+  
+}

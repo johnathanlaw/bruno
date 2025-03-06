@@ -1,0 +1,27 @@
+meta {
+  name: get-group-permissions
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/groups/:groupId/permissions
+  body: none
+  auth: bearer
+}
+
+params:path {
+  groupId: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get group's permissions
+}

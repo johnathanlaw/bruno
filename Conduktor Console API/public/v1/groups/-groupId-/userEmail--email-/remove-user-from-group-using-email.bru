@@ -1,0 +1,28 @@
+meta {
+  name: remove-user-from-group-using-email
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/groups/:groupId/userEmail/:email
+  body: none
+  auth: bearer
+}
+
+params:path {
+  groupId: <string>
+  email: <string>
+}
+
+headers {
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Remove a user from a group
+}

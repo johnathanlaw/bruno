@@ -1,0 +1,42 @@
+meta {
+  name: Delete an interceptor
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/gateway/v2/interceptor/:name
+  body: json
+  auth: basic
+}
+
+params:path {
+  name: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "vCluster": "<string>",
+    "group": "<string>",
+    "username": "<string>"
+  }
+}
+
+docs {
+  
+  [![Beta](https://img.shields.io/badge/Lifecycle-Beta-orange)](#tag/Versioning)
+  
+  Delete an interceptor
+  
+  
+}

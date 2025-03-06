@@ -1,0 +1,59 @@
+meta {
+  name: create-or-update-kafka-connect-cluster
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/console/v2/cluster/:cluster/kafka-connect?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "name": "<string>",
+      "cluster": "<string>",
+      "labels": {
+        "ipsumda5": "<string>",
+        "elit_9_": "<string>",
+        "deserunt78": "<string>"
+      }
+    },
+    "spec": {
+      "displayName": "<string>",
+      "urls": "<string>",
+      "headers": {
+        "Excepteur_a12": "<string>"
+      },
+      "ignoreUntrustedCertificate": "<boolean>",
+      "security": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      }
+    }
+  }
+}
+
+docs {
+  Create or update a KafkaConnectCluster
+}

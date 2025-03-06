@@ -1,0 +1,47 @@
+meta {
+  name: create-or-update-indexed-topic
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/public/sql/v1/cluster/:cluster/indexed_topic?dryMode=false
+  body: json
+  auth: bearer
+}
+
+params:query {
+  dryMode: false
+}
+
+params:path {
+  cluster: <string>
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "apiVersion": "<string>",
+    "kind": "<string>",
+    "metadata": {
+      "cluster": "<string>",
+      "name": "<string>"
+    },
+    "spec": {
+      "retentionTimeInSecond": "<long>",
+      "enabled": "<boolean>"
+    }
+  }
+}
+
+docs {
+  Create or update a IndexedTopic
+}

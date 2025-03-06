@@ -1,0 +1,23 @@
+meta {
+  name: list-user-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/iam/v2/user
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List User resources
+}

@@ -1,0 +1,27 @@
+meta {
+  name: delete-a-user
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/users/:email
+  body: none
+  auth: bearer
+}
+
+params:path {
+  email: <string>
+}
+
+headers {
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Removes a user from the organization
+}

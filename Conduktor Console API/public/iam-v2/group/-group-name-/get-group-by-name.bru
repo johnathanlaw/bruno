@@ -1,0 +1,27 @@
+meta {
+  name: get-group-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/iam/v2/group/:group-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  group-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get Group by name
+}

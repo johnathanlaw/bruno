@@ -1,0 +1,28 @@
+meta {
+  name: get-indexed-topic-by-name
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/sql/v1/cluster/:cluster/indexed_topic/:indexed-topic-name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+  indexed-topic-name: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get IndexedTopic by name
+}

@@ -1,0 +1,27 @@
+meta {
+  name: get-a-cluster
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/v1/clusters/:clusterName
+  body: none
+  auth: bearer
+}
+
+params:path {
+  clusterName: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Get cluster from its technical id
+}

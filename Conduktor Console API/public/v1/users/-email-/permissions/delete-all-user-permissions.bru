@@ -1,0 +1,27 @@
+meta {
+  name: delete-all-user-permissions
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/public/v1/users/:email/permissions/all
+  body: none
+  auth: bearer
+}
+
+params:path {
+  email: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Delete all user's permissions
+}

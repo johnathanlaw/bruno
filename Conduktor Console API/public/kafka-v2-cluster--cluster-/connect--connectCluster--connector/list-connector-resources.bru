@@ -1,0 +1,28 @@
+meta {
+  name: list-connector-resources
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/public/kafka/v2/cluster/:cluster/connect/:connectCluster/connector
+  body: none
+  auth: bearer
+}
+
+params:path {
+  cluster: <string>
+  connectCluster: <string>
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  List Connector resources
+}

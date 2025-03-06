@@ -1,0 +1,28 @@
+meta {
+  name: add-user-to-group-using-id
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/public/v1/groups/:groupId/users/:userId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  groupId: <string>
+  userId: <integer>
+}
+
+headers {
+  Accept: text/plain
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+docs {
+  Add a user to a group
+}
